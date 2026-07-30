@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
 
+# Права для бота, чтобы не было ошибки 403
 permissions:
   contents: write
 
@@ -12,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install and Build 🔧
         run: |
@@ -20,7 +21,7 @@ jobs:
           npm run build
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: dist
