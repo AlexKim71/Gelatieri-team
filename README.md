@@ -1,99 +1,200 @@
-# Parcel template
+# Gelatieri-Team — Premium Gelato Landing Page
 
-Этот проект был создан при помощи Parcel. Для знакомства и настройки
-дополнительных возможностей [обратись к документации](https://parceljs.org/).
+A modern, responsive landing page for an artisanal gelato shop. Showcases gelato
+products, shares the brand's rich tradition, highlights customer reviews, and
+provides franchise and location information. Built with a mobile-first approach
+and optimized for accessibility and performance.
 
-## Подготовка нового проекта
+---
 
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Склонируй этот репозиторий.
-3. Измени имя папки с `parcel-project-template` на имя своего проекта.
-4. Создай новый пустой репозиторий на GitHub.
-5. Открой проект в VSCode, запусти терминал и свяжи проект с GitHub-репозиторием
-   [по инструкции](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url).
-6. Установи зависимости проекта в терминале командой `npm install` .
-7. Запусти режим разработки, выполнив команду `npm start`.
-8. Перейди в браузере по адресу [http://localhost:1234](http://localhost:1234).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
+## Table of Contents
 
-## Файлы и папки
+- [About](#about)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Install & Run](#install--run)
+  - [Build](#build)
+- [Project Structure](#project-structure)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Credits](#credits)
+- [License](#license)
 
-- Все паршалы файлов стилей должны лежать в папке `src/sass` и импортироваться в
-  файлы стилей страниц. Например, для `index.html` файл стилей называется
-  `index.scss`.
-- Изображения добавляй в папку `src/images`. Сборщик оптимизирует их, но только
-  при деплое продакшн версии проекта. Все это происходит в облаке, чтобы не
-  нагружать твой компьютер, так как на слабых машинах это может занять много
-  времени.
+---
 
-## Деплой
+## About
 
-Для настройки деплоя проекта необходимо выполнить несколько дополнительных шагов
-по настройке твоего репозитория. Зайди во вкладку `Settings` и в подсекции
-`Actions` выбери выбери пункт `General`.
+Gelatieri-Team is a sophisticated landing page designed for a premium gelato
+brand. It emphasizes quality, tradition, and customer experience through an
+elegant, adaptive layout built with modern front-end technologies and best
+practices.
 
-![GitHub actions settings](src/assets/actions-config-step-1.png)
+## Features
 
-Пролистай страницу до последней секции, в которой убедись что выбраны опции как
-на следующем изображении и нажми `Save`. Без этих настроек у сборки будет
-недостаточно прав для автоматизации процесса деплоя.
+- Mobile-first, responsive design (mobile, tablet, desktop)
+- SCSS (Sass) with reusable variables, mixins, and BEM naming conventions
+- Semantic HTML with SEO-friendly meta tags
+- Interactive JavaScript modules for enhanced UX
+- Swiper.js carousel integration for product showcases
+- Parcel 2 bundler for optimized builds
+- PostHTML includes for modular component organization
+- Code formatting and linting via Prettier and Husky
+- Automatic deployment pipeline to GitHub Pages
 
-![GitHub actions settings](src/assets/actions-config-step-2.png)
+## Technologies
 
-Продакшн версия проекта будет автоматически собираться и деплоиться на GitHub
-Pages, в ветку `gh-pages`, каждый раз когда обновляется ветка `main`. Например,
-после прямого пуша или принятого пул-реквеста. Для этого необходимо в файле
-`package.json` отредактировать поле `homepage` и скрипт `build`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
+- HTML5
+- SCSS (Sass)
+- JavaScript (ES6+)
+- Swiper.js
+- Parcel 2
+- Node.js
+- npm
+- Prettier
+- Husky
+- lint-staged
+- PostHTML
+- modern-normalize
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/",
-"scripts": {
-  "build": "parcel build src/*.html --public-url /your_repo_name/"
-},
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16+ recommended)
+- npm (comes with Node.js)
+
+### Install & Run (development)
+
+1. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+2. Start the dev server:
+
+   ```bash
+   npm start
+   ```
+
+The dev server serves `src/index.html` with automatic hot-reloading (Parcel is
+configured to watch and rebuild on file changes).
+
+### Build (production)
+
+To create a production-optimized build:
+
+```bash
+npm run build
 ```
 
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
+The compiled and minified files will be generated in the `dist/` directory,
+ready for deployment.
 
-![GitHub Pages settings](src/assets/repo-settings.png)
+## Project Structure
 
-### Статус деплоя
+- `src/`
+  - `index.html` — main entry point
+  - `sass/` — SCSS modules and component styles (variables, mixins, utilities)
+  - `js/` — vanilla JavaScript modules for interactivity
+  - `partials/` — reusable HTML components (header, hero, products, reviews,
+    footer, etc.)
+  - `images/` — static assets (images, icons, favicon)
+  - `assets/` — additional resources
+- `.husky/` — Git hooks configuration (runs linters and formatters pre-commit)
+- `.parcel-cache/` — Parcel bundler cache for fast rebuilds
+- `dist/` — production build output
+- `package.json` & `package-lock.json` — project dependencies and npm scripts
+- `.editorconfig` — enforces consistent text formatting across editors
+- `.prettierrc` & `.prettierignore` — code formatting rules
+- `.htmlnanorc` — HTML optimization settings
+- `.parcelrc` — Parcel bundler configuration
+- `.posthtmlrc` — PostHTML configuration for includes
+- `.sassrc` — Sass compiler configuration
+- `.gitignore` — specifies files to ignore in version control
+- `LICENSE` — ISC license
+- `README.md` — project documentation
 
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
+## Usage
 
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
+To get a local copy up and running, follow these steps.
 
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
+### Prerequisites
 
-![Deployment status](src/assets/status.png)
+Make sure you have **Node.js** installed on your computer (required to use
+`npm`). Download it from [nodejs.org](https://nodejs.org/).
 
-### Живая страница
+### 1. Clone the repository
 
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/parcel-project-template](https://goitacademy.github.io/parcel-project-template).
+Open your terminal and run:
 
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` или скрипта `build` в
-файле `package.json`.
+```bash
+git clone https://github.com/AlexKim71/gelatieri-team.git
+```
 
-## Как это работает
+### 2. Navigate to the project folder
 
-![How it works](src/assets/how-it-works.png)
+```bash
+cd gelatieri-team
+```
 
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+### 3. Install dependencies
+
+Install all required packages (Parcel, Swiper, Husky, Prettier, etc.):
+
+```bash
+npm install
+```
+
+### 4. Run the development server
+
+Start the local development server with live-reloading:
+
+```bash
+npm start
+```
+
+> **Note:** The project will automatically open in your default browser. If not,
+> manually navigate to [http://localhost:1234](http://localhost:1234).
+
+> **Note:** Husky + lint-staged automatically run Prettier on staged files at
+> commit time, ensuring consistent code formatting without manual intervention.
+
+### 🛠 Production Build
+
+To build an optimized production version for deployment, run:
+
+```bash
+npm run build
+```
+
+> The compiled and minified files will be generated in the `dist/` directory.
+
+## Contributing
+
+Contributions are welcome! Follow this recommended workflow:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Make your changes and test locally with `npm start`
+4. Commit your changes (Prettier formatting is applied automatically via git
+   hooks)
+5. Push to your branch and open a pull request
+
+Please keep code style consistent—Prettier is pre-configured and runs
+automatically on commit.
+
+## Credits
+
+- **Author:** Alexander Gavrylov
+- **Repository:**
+  [github.com/AlexKim71/gelatieri-team](https://github.com/AlexKim71/gelatieri-team)
+- **Images and assets:** Located in `src/images/` (review licenses if reusing
+  externally)
+
+## License
+
+This project is licensed under the ISC License. See the LICENSE file for
+details.
