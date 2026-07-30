@@ -42,6 +42,7 @@ practices.
 - PostHTML includes for modular component organization
 - Code formatting and linting via Prettier and Husky
 - Automatic deployment pipeline to GitHub Pages
+  ![Lighthouse report](./src/images/LightHouse_Stats.png)
 
 ## Technologies
 
