@@ -1,0 +1,129 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+// Зверніть увагу!!!
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Seymour One', sans-serif;
+
+// Base styles!
+
+:root {
+  --main-green: #84a178;
+  --main-yellow: #f8d24e;
+  --light-yellow: #efd478;
+  --light-green: #aec6a5;
+  --chocolate: #d6936d;
+  --light-chocolate: #d5753f;
+  --gradient: #d9d9d9;
+  --text-light: #fcfcfc;
+  --text-dark: #131313;
+  --text-footer: #7a7a7a;
+  --button-green: #0a8817;
+  --button-grey: #ababab;
+  --white: #ffffff;
+  --grey-line: #e1e1e1;
+  --green-line: #9cbe8f;
+  --green-border: #96af8c;
+  --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+}
+body {
+  color: var(--text-light);
+  font-family: Montserrat, sans-serif;
+  background-color: var(--main-green);
+}
+
+button:hover {
+  transform: scale(1.1);
+  transition: transform 250ms var(--cubic-bezier);
+}
+
+h1,
+h2,
+тз h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.link {
+  text-decoration: none;
+}
+
+.container {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    max-width: 480px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  main {
+    background-image: url(../images/mobile/background.jpg);
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  main {
+    background-image: url(../images/tablet/background.jpg);
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    background-image: url(../images/desktop/background.jpg);
+    width: 100%;
+  }
+}
+
+main {
+  overflow-x: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

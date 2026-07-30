@@ -1,0 +1,37 @@
+{
+  "name": "gelatieri-team",
+  "version": "2.0.0",
+  "description": "",
+  "homepage": "",
+  "scripts": {
+    "start": "parcel src/*.html --open",
+    "build": "parcel build src/*.html",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexKim71/gelatieri-team.git"
+  },
+  "keywords": [],
+  "author": "Alexander Gavrylov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexKim71/gelatieri-team/issues"
+  },
+  "dependencies": {
+    "modern-normalize": "^1.1.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.2.0",
+    "parcel": "^2.6.0",
+    "parcel-reporter-clean-dist": "^1.0.4",
+    "posthtml-include": "^1.7.4",
+    "prettier": "^3.9.6"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "lint-staged": {
+    "*.{html,css,scss,js,json,md}": "prettier --write"
+  }
+}
